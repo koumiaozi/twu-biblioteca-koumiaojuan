@@ -31,8 +31,8 @@
 <br/>
 <%
     String res;
-    Book returnBook = BibliotecaApp.checkOutBook("Alice");
-    res = "Author:"+returnBook.getAuthor()+",Publication Year:"+returnBook.getPublicationYear();
+    Book returnBook = BibliotecaApp.checkOutBook("Amy");
+    res = "That is not a valid book to return";
 %>
 <input type="text" id="book" style="visibility: hidden; width: 300px; height: 50px;" value="<%=res%>"/>
 
