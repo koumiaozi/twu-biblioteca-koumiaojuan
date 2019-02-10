@@ -8,7 +8,7 @@ public class BibliotecaApp {
         System.out.println(getWelcomeMessage());
         List<Book> books = getAllBooks();
         for (Book book : books) {
-            System.out.println("Id : " + book.getId() + ", Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear());
+            System.out.println(book);
         }
     }
 
