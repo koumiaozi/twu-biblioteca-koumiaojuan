@@ -28,7 +28,7 @@
     String information = "";
     Book book = BibliotecaApp.checkOutBook("Alice");
     if(null != book){
-        information = "Author:"+ book.getAuthor()+",PublicationYear:"+ book.getPublicationYear();
+        information = "Thank you!Enjoy your book";
     }
 %>
 <input type="text" id="information" style="visibility: hidden; width: 300px; height: 50px;" value="<%=information%>"/>
