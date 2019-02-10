@@ -7,9 +7,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         System.out.println(getWelcomeMessage());
         List<Book> books = getAllBooks();
-        for (Book book : books) {
-            System.out.println(book);
-        }
+        printBookInformation(books);
     }
 
     static String getWelcomeMessage() {
@@ -23,5 +21,11 @@ public class BibliotecaApp {
         books.add(book1);
         books.add(book2);
         return books;
+    }
+
+    static void printBookInformation(List<Book> allBooks) {
+        for (Book book : allBooks) {
+            System.out.println("Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear());
+        }
     }
 }
