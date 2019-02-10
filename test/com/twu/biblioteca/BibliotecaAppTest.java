@@ -44,6 +44,12 @@ public class BibliotecaAppTest {
                 "Author:Bob, publication year: 1992\n",systemOut());
     }
 
+    @Test
+    public void testCheckOutBook() {
+        String author = "Alice";
+        assertEquals(new Book(1, "Alice", "1991"),BibliotecaApp.checkOutBook(author));
+    }
+
     private List<Book> getTestData() {
         Book book1 = new Book(1, "Alice", "1991");
         Book book2 = new Book(2, "Bob", "1992");

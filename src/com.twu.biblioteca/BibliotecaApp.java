@@ -33,8 +33,14 @@ public class BibliotecaApp {
         return "Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear();
     }
 
-    public static void quit(){
-        System.exit(0);
+    public static Book checkOutBook(String author){
+        List<Book> books = getAllBooks();
+        for(Book book : books){
+            if(book.getAuthor().equals(author)){
+                return book;
+            }
+        }
+        return null;
     }
 
 }

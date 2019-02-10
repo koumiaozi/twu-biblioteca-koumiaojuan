@@ -1,5 +1,5 @@
 <%@ page import="com.twu.biblioteca.BibliotecaApp" %>
-<%@ page import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" pageEncoding="UTF-8" %>
 <%@ page import="com.twu.biblioteca.Book" %>
 
 <%--
@@ -16,27 +16,44 @@
     <title>$books$</title>
 </head>
 <body>
-<input type="button" onclick="getBooks()" value="List Of books" />
-<input type="button" onclick="invalidTip()" value="button" />
-<input type="button" onclick="window.close()" value="quit" />
+<input type="button" onclick="getBooks()" value="List Of books"/>
+<input type="button" onclick="invalidTip()" value="button"/>
+<input type="button" onclick="window.close()" value="quit"/>
+<br/>
+<br/>
+<input type="button" onclick="checkOutBook()" value="Check Out Book"/>
 <br/>
 <br/>
 <%
+    String information = "";
+    Book book = BibliotecaApp.checkOutBook("Alice");
+    if(null != book){
+        information = "Author:"+ book.getAuthor()+",PublicationYear:"+ book.getPublicationYear();
+    }
+%>
+<input type="text" id="information" style="visibility: hidden; width: 300px; height: 50px;" value="<%=information%>"/>
+
+<%
     String result = "";
-   for (Book book : BibliotecaApp.getAllBooks()) {
-        result += BibliotecaApp.getBookInformation(book);
-   }
+    for (Book book1 : BibliotecaApp.getAllBooks()) {
+        result += BibliotecaApp.getBookInformation(book1);
+    }
 %>
 
-<input type="text" id="result" style="visibility: hidden; width: 300px; height: 100px; overflow: hidden";
+<input type="text" id="result" style="visibility: hidden; width: 300px; height: 100px; overflow: hidden" ;
        value="<%=result%>"/>
 
 <script>
     function getBooks() {
         document.getElementById("result").style.visibility = "visible";
     }
+
     function invalidTip() {
         alert("Please select a valid option");
+    }
+
+    function checkOutBook() {
+        document.getElementById("information").style.visibility = "visible";
     }
 </script>
 </body>
