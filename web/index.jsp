@@ -13,9 +13,22 @@
 </head>
 <body>
 <input type="button"
-       onclick="<%BibliotecaApp.printBookInformation(BibliotecaApp.getAllBooks());%>;"
+       onclick="getBooks()"
        value="List Of books" />
 <br/>
+<br />
 
+<input type="button"
+       onclick="invalidTip()"
+       value="button" />
+<script>
+    function getBooks() {
+        alert("1234");
+        <%BibliotecaApp.printBookInformation(BibliotecaApp.getAllBooks());%>
+    }
+    function invalidTip() {
+        alert("Please select a valid option");
+    }
+</script>
 </body>
 </html>
