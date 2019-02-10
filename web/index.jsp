@@ -24,11 +24,25 @@
 <input type="button" onclick="checkOutBook()" value="Check Out Book"/>
 <br/>
 <br/>
+
+
+<input type="button" onclick="returnBook()" value="Return Book"/>
+<br/>
+<br/>
+<%
+    String res;
+    Book returnBook = BibliotecaApp.checkOutBook("Alice");
+    res = "Author:"+returnBook.getAuthor()+",Publication Year:"+returnBook.getPublicationYear();
+%>
+<input type="text" id="book" style="visibility: hidden; width: 300px; height: 50px;" value="<%=res%>"/>
+
 <%
     String information = "";
-    Book book = BibliotecaApp.checkOutBook("Alice");
-    if(null != book){
+    Book book = BibliotecaApp.checkOutBook("Amy");
+    if (null != book) {
         information = "Thank you!Enjoy your book";
+    } else {
+        information = "Sorry,that book is not avaliable";
     }
 %>
 <input type="text" id="information" style="visibility: hidden; width: 300px; height: 50px;" value="<%=information%>"/>
@@ -54,6 +68,9 @@
 
     function checkOutBook() {
         document.getElementById("information").style.visibility = "visible";
+    }
+    function returnBook() {
+        document.getElementById("book").style.visibility = "visible";
     }
 </script>
 </body>
