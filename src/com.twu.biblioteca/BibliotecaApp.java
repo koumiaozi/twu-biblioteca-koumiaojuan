@@ -14,7 +14,7 @@ public class BibliotecaApp {
         return "Welcome to Biblioteca.Your one-stop-shop for great book titles in Bangalore!";
     }
 
-    static List<Book> getAllBooks() {
+    public static List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
         Book book1 = new Book(1, "Alice", "1991");
         Book book2 = new Book(2, "Bob", "1992");
@@ -23,9 +23,15 @@ public class BibliotecaApp {
         return books;
     }
 
-    static void printBookInformation(List<Book> allBooks) {
+    public static void printBookInformation(List<Book> books) {
+        System.out.print(getBookInformation(books));
+    }
+
+    public static String getBookInformation(List<Book> allBooks) {
+        String result = "";
         for (Book book : allBooks) {
-            System.out.println("Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear());
+           result += "Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear()+"\n";
         }
+        return result;
     }
 }

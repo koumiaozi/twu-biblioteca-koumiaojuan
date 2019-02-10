@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="twu-biblioteca-koumiaojuan-master:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/twu_biblioteca_koumiaojuan_master_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="twu-biblioteca-koumiaojuan-master/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="twu-biblioteca-koumiaojuan-master" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
