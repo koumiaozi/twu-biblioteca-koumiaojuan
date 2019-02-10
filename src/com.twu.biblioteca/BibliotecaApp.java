@@ -24,14 +24,17 @@ public class BibliotecaApp {
     }
 
     public static void printBookInformation(List<Book> books) {
-        System.out.print(getBookInformation(books));
+        for (Book book : books) {
+            System.out.println(getBookInformation(book));
+        }
     }
 
-    public static String getBookInformation(List<Book> allBooks) {
-        String result = "";
-        for (Book book : allBooks) {
-           result += "Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear()+"\n";
-        }
-        return result;
+    public static String getBookInformation(Book book) {
+        return "Author:" + book.getAuthor() + ", publication year: " + book.getPublicationYear();
     }
+
+    public static void quit(){
+        System.exit(0);
+    }
+
 }

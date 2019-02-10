@@ -1,4 +1,8 @@
-<%@ page import="com.twu.biblioteca.BibliotecaApp" %><%--
+<%@ page import="com.twu.biblioteca.BibliotecaApp" %>
+<%@ page import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.twu.biblioteca.Book" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: mjkou
   Date: 10/02/2019
@@ -12,19 +16,24 @@
     <title>$books$</title>
 </head>
 <body>
-<input type="button"
-       onclick="getBooks()"
-       value="List Of books" />
+<input type="button" onclick="getBooks()" value="List Of books" />
+<input type="button" onclick="invalidTip()" value="button" />
+<input type="button" onclick="window.close()" value="quit" />
 <br/>
-<br />
+<br/>
+<%
+    String result = "";
+   for (Book book : BibliotecaApp.getAllBooks()) {
+        result += BibliotecaApp.getBookInformation(book);
+   }
+%>
 
-<input type="button"
-       onclick="invalidTip()"
-       value="button" />
+<input type="text" id="result" style="visibility: hidden; width: 300px; height: 100px; overflow: hidden";
+       value="<%=result%>"/>
+
 <script>
     function getBooks() {
-        alert("1234");
-        <%BibliotecaApp.printBookInformation(BibliotecaApp.getAllBooks());%>
+        document.getElementById("result").style.visibility = "visible";
     }
     function invalidTip() {
         alert("Please select a valid option");
