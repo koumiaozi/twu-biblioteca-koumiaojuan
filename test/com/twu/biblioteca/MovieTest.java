@@ -15,6 +15,12 @@ public class MovieTest {
         assertEquals(getTestMovies(), movies);
     }
 
+    @Test
+    public void testCheckOutMovie() {
+        String movie = "A";
+        assertEquals(new Movie("A","1956","X",2),BibliotecaApp.checkOutMovie(movie));
+    }
+
     List<Movie> getTestMovies(){
         List<Movie> movies = new ArrayList<>();
         Movie movie1 = new Movie("A","1956","X",2);

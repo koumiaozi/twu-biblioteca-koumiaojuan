@@ -54,4 +54,15 @@ public class BibliotecaApp {
         return null;
     }
 
+    public static Movie checkOutMovie(String name){
+        List<Movie> movies = getAllMovies();
+        for(Movie movie : movies){
+            if(movie.getName().equals(name)){
+                return movie;
+            }
+        }
+        return null;
+    }
+
+
 }
